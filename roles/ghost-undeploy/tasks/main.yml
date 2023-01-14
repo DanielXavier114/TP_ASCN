@@ -1,0 +1,6 @@
+---
+- name: Delete Deployments
+  shell: kubectl delete deployment.apps --all
+
+- name: Delete Services
+  shell: kubectl delete service --all

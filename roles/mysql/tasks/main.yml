@@ -1,10 +1,6 @@
 ---
-
 - name: MySQL PVC
-  shell: kubectl apply -f roles/mysql/tasks/mysql-pvc.yml 
-
-- name: MySQL Pod
-  shell: kubectl apply -f roles/mysql/tasks/mysql-pod.yml 
+  shell: kubectl apply -f roles/mysql/tasks/mysql-pvc.yml
 
 - name: MySQL Service
   shell: kubectl apply -f roles/mysql/tasks/mysql-service.yml
@@ -20,10 +16,13 @@
   set_fact:
     db_host: "{{ service_info.stdout }}"
 
-- name: Get MySQL Pod
-  shell: kubectl get pod -l app=mysql -o jsonpath='{.items[0].metadata.name}'
-  register: pod_name
+#- name: Set Retain Data
+#  shell: kubectl patch pv pvc-c4edfe3d-76aa-496e-9f51-04ff2d7d3a84 -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
+
+- name: Updating Pod
+  shell: kubectl get pods -l app=mysql -o jsonpath='{.items[0].metadata.name}'
+  register: pod_info
 
 - name: Set MySQL Pod
   set_fact:
-    mysql_pod: "{{ pod_name.stdout }}"
+    mysql_pod: "{{ pod_info.stdout }}"

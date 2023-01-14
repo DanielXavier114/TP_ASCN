@@ -35,6 +35,6 @@ spec:
         - name: database__connection__password
           value: "123456_"
         - name: url
-          value: 'http://34.68.17.124:80/'
-          value: 'http://34.136.198.58:80/'
-          value: 'http://35.238.4.51:80/'
+          value: 'http://34.123.97.196:80/'
+        ports:
+        - containerPort: 2368

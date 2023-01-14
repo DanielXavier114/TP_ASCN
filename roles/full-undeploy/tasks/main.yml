@@ -1,6 +1,6 @@
 ---
 - name: Delete Pods
-  shell: kubectl delete pod --all 
+  shell: kubectl delete pod --all
 
 - name: Delete Deployments
   shell: kubectl delete deployment.apps --all

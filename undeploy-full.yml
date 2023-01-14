@@ -3,6 +3,6 @@
 - name: Delete
   hosts: localhost
   roles:
-    - ghost-undeploy
+    - full-undeploy
   tags:
     - deleteAll
