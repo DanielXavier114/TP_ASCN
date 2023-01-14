@@ -34,4 +34,4 @@
   delay: 10
 
 - name: Add Admin
-  shell: kubectl exec {{ mysql_pod }} -c mysql -- mysql --user="teste" --password="123456_" --database="ghost" --execute="update users set name='admin', password='\$2b\$10\$Bpr2sDfRr4v.fotZHPPUnuzpTqJtPQ6u/2.DFJVJffOwjJcRnC1vu', email='teste@ascn.com', status='active' where id=1;"
+  shell: kubectl exec {{ mysql_pod }} -c mysql -- mysql --user="teste" --password="123456_" --database="ghost" --execute="update users set name='ascn', password='\$2b\$10\$GXYANAQsB6ftzkNYeM5GSuk6jTCbvE.M9Pf6dXfLUusTw3GMXtybu', email='ascn@example.com', status='active' where id=1;"

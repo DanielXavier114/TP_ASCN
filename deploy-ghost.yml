@@ -1,16 +1,15 @@
 ---
 # Playbook to deploy Ghost and its components
-
 - name: DB install and start
-  hosts: localhost 
+  hosts: localhost
   roles:
-      - mysql
-  tags: 
+    - mysql
+  tags:
     - dbinstall
 
 - name: Ghost install and start
   hosts: localhost
   roles:
-      - ghost
+    - ghost
   tags:
     - ghostinstall

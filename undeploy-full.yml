@@ -1,8 +1,0 @@
----
-# Playbook to undeploy Ghost and its component
-- name: Delete
-  hosts: localhost
-  roles:
-    - full-undeploy
-  tags:
-    - deleteAll
