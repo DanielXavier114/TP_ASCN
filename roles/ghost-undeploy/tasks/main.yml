@@ -7,3 +7,4 @@
 
 - name: Delete Services
   shell: kubectl delete service --all
+
